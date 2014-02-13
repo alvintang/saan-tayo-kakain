@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+	<fragment
+    	android:id="@+id/the_map"
+		android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:name="com.google.android.gms.maps.MapFragment" />
+
+     <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:layout_marginBottom="10dp">
+
+		<com.google.android.gms.ads.AdView android:id="@+id/adView"
+        	android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="5dp"
+            ads:adUnitId="ca-app-pub-5603625544367080/9781168059"
+            ads:adSize="BANNER"/>
+         
+         <!-- 
+	        <TextView
+	            android:id="@+id/radius"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+   	            android:layout_height="wrap_content"
+   	            android:layout_width="fill_parent"
+	            android:gravity="center"
+	            android:text="@string/title"
+				android:textColor="#FFFFFF"
+	            android:textSize="15sp"
+	            android:typeface="monospace" />
+	 
+	        <TextView
+	            android:id="@+id/shoplist"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:layout_width="fill_parent" 
+	            android:layout_height="wrap_content"
+	            android:layout_below="@+id/radius"
+	            android:gravity="center" 
+				android:textColor="#FFFFFF"
+	            android:textSize="15sp"
+	            android:typeface="monospace"/>  -->
+			<LinearLayout
+	            android:id="@+id/controlButtons"
+	            android:layout_width="match_parent"
+    			android:layout_height="wrap_content"
+    			android:layout_below="@+id/adView"
+    			android:orientation="horizontal"
+    			android:gravity="center_horizontal|top">
+			<Button
+			    android:id="@+id/nextStore"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_horizontal"
+			    android:text="@string/nextStore"
+			    android:textColor="#FFFFFF"
+			    android:textSize="15sp"
+			    android:paddingLeft="10dp"
+	            android:paddingRight="10dp"
+	            android:paddingTop="5dp"
+	            android:paddingBottom="5dp"
+	            android:layout_marginRight="10dp"
+			    android:fontFamily="monospace"
+			    android:background="@drawable/button_red_small"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"/>
+			<ImageButton
+			    android:id="@+id/openMaps"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_horizontal"
+			    android:src="@drawable/directions_lowres"
+			    android:background="#FFFFFF00"
+				android:contentDescription="directions"
+	            android:layout_marginRight="10dp"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"
+	            android:maxHeight="50dp"/>
+			<ImageButton
+			    android:id="@+id/locateUser"
+			    android:contentDescription="locate user"
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:layout_gravity="center_horizontal"
+			    android:src="@drawable/user_lowres"
+			    android:background="#FFFFFF00"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"
+				android:maxWidth="100dp"
+			    android:maxHeight="50dp"/>
+	        </LinearLayout>
+	        <ListView 
+				android:id="@+id/placeList" 
+			    android:layout_height="fill_parent"
+			    android:layout_width="match_parent"
+			    android:paddingBottom="50dp"
+			    android:paddingTop="50dp"
+			    android:divider="#800000"
+			    android:dividerHeight="1dp"
+			    android:visibility="invisible"/>
+			
+	        <LinearLayout
+	            android:id="@+id/share"
+	            android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:layout_alignParentBottom="true"
+    			android:layout_centerHorizontal="true"
+    			android:orientation="horizontal"
+    			android:gravity="center_vertical|bottom">
+	        <ImageButton
+			    android:id="@+id/shareButtonFB"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="bottom|center_horizontal"
+			    android:textStyle="bold"
+			    android:visibility="invisible"
+			    android:contentDescription="FB share"
+			    android:src="@drawable/fb_lowres"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"
+			    android:maxWidth="100dp"
+			    android:maxHeight="40dp"
+			    android:background="@null"
+			    />
+		    <ImageButton
+			    android:id="@+id/shareButtonTw"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+				android:layout_gravity="bottom|center_horizontal"
+			    android:textStyle="bold"
+			    android:visibility="invisible"
+			    android:contentDescription="Tweet Share"
+			    android:src="@drawable/twitter_logo_lowres"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"
+			    android:maxWidth="100dp"
+			    android:maxHeight="40dp"
+			    android:background="@null"/>
+		    
+			</LinearLayout>
+			<ImageButton
+			    android:id="@+id/listplaces"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center_horizontal"
+			    android:layout_alignParentLeft="true"
+			    android:layout_alignParentBottom="true"
+			    android:src="@drawable/list_lowres"
+			    android:background="#FFFFFF00"
+				android:contentDescription="directions"
+	            android:layout_marginLeft="10dp"
+			    android:scaleType="centerCrop"
+	            android:adjustViewBounds="true"
+	            android:maxHeight="50dp"/>
+    </RelativeLayout>
+</RelativeLayout>
